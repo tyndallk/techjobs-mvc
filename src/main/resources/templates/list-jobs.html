@@ -12,6 +12,23 @@
 
     <!-- TODO #3 - Use the same list display from search.html -->
 
+    <div>
+        <h3 th:text = "| ${size} Result(s)|"> </h3>
+
+        <table class="job-listing" th:each="job : ${jobs}">
+            <tbody>
+            <tr th:each = "row : ${job}">
+                <td th:text="${#strings.capitalizeWords(row.key)}"></td>
+                <td th:text="${row.value}"></td>
+            </tr>
+            </tbody>
+
+        </table>
+
+        <br/>
+        <br/>
+    </div>
+
 </div>
 
 </body>
